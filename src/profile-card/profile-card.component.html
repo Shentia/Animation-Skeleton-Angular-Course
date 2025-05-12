@@ -1,9 +1,15 @@
 <div class="card">
-  @if (profile()) {
-    <div>
-      <img [src]="profile()!.avatar" class="avatar" />
-      <h2>{{ profile()!.name }}</h2>
-      <em>Member Since: {{ profile()!.memberSince }}</em>
-    </div>
+  @defer (when profile()) {
+  <div @fadeIn>
+    <img [src]="profile()!.avatar" class="avatar" />
+    <h2>{{ profile()!.name }}</h2>
+    <em>Member Since: {{ profile()!.memberSince }}</em>
+  </div>
+   } @placeholder {
+  <div class="skeleton" @fadeOut>
+    <div class="avatar"></div>
+    <div class="text title"></div>
+    <div class="text subtitle"></div>
+  </div>
   }
 </div>

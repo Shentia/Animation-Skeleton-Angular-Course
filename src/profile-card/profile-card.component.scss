@@ -33,3 +33,40 @@
     font-size: 85%;
   }
 }
+
+.skeleton {
+  .avatar,
+  .text{
+    background: linear-gradient(90deg,#eee 25%, #fff 50%, #eee 75%);
+    background-size: 400% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+
+  .text {
+  
+    margin-inline: auto;
+  }
+  .title{
+    border-radius: 8px;
+    width: 70%;
+    height: 28px;
+    margin-block: 9px 3px;
+  }
+
+  .subtitle{
+    height: 15px;
+    border-radius: 6px;
+    width: 50%;
+  }
+}
+
+
+@keyframes shimmer {
+  0%{
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

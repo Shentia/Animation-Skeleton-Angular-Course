@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @Component({
   selector: 'app-root',
@@ -26,4 +27,10 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 export class App {
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App,
+  {
+    providers:[
+      provideAnimationsAsync()
+    ]
+  }
+);
