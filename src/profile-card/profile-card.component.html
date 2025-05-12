@@ -1,0 +1,9 @@
+<div class="card">
+  @if (profile()) {
+    <div>
+      <img [src]="profile()!.avatar" class="avatar" />
+      <h2>{{ profile()!.name }}</h2>
+      <em>Member Since: {{ profile()!.memberSince }}</em>
+    </div>
+  }
+</div>
